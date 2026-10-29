@@ -1,0 +1,147 @@
+export interface ClientLogo {
+  id: string;
+  name: string;
+  logoUrl: string;
+  category: string;
+  tag: string;
+  metric?: string;
+}
+
+export const clientsData: ClientLogo[] = [
+  {
+    id: "prima",
+    name: "Prima Sri Lanka",
+    logoUrl: "/resources/prima.png",
+    category: "FMCG & Agro Logistics",
+    tag: "Islandwide Van Fleets",
+    metric: "Multi-Depot Operations",
+  },
+  {
+    id: "cai",
+    name: "Ceylon Agro Industries (CAI)",
+    logoUrl: "/resources/CAI.png",
+    category: "Agro Industries & FMCG",
+    tag: "Islandwide Distribution",
+    metric: "First SFA Implementation",
+  },
+  {
+    id: "dreamron",
+    name: "Dreamron Cosmetics",
+    logoUrl: "/resources/dreamron.png",
+    category: "Cosmetics & Personal Care",
+    tag: "Direct Salon Billing",
+    metric: "Bluetooth Mobile Printing",
+  },
+  {
+    id: "anton",
+    name: "Anton",
+    logoUrl: "/resources/anton.png",
+    category: "PVC, Roofing & Hardware",
+    tag: "Dealer & Hardware Network",
+    metric: "Credit & Outstanding Control",
+  },
+  {
+    id: "pussalla",
+    name: "Pussalla Meat Producers",
+    logoUrl: "/resources/pussalla.png",
+    category: "Cold Chain Meat Distribution",
+    tag: "Perishable Stock Control",
+    metric: "Live GPS Route Tracking",
+  },
+  {
+    id: "acl",
+    name: "ACL Cables",
+    logoUrl: "/resources/acl.png",
+    category: "Electrical & Hardware",
+    tag: "Dealer Credit Control",
+    metric: "Zero Outstanding Delays",
+  },
+  {
+    id: "kcl",
+    name: "Kelani Cables",
+    logoUrl: "/resources/kcl.png",
+    category: "Cables & Industrial Supplies",
+    tag: "High-Volume Orders",
+    metric: "Automated Invoicing",
+  },
+  {
+    id: "ctc",
+    name: "Ceylon Tobacco Company",
+    logoUrl: "/resources/ctc.png",
+    category: "Enterprise FMCG",
+    tag: "Mission-Critical SFA",
+    metric: "Strict Route Compliance",
+  },
+  {
+    id: "hasky",
+    name: "Hasky Stationery",
+    logoUrl: "/resources/hasky_logo.png",
+    category: "Stationery & Writing Instruments",
+    tag: "Retail Outlet Distribution",
+    metric: "High-Speed Van Billing",
+  },
+  {
+    id: "cbi",
+    name: "Ceylon Beverage International",
+    logoUrl: "/resources/cbi.png",
+    category: "Beverage Wholesaling",
+    tag: "Rapid Outlet Billing",
+    metric: "Daily Van Stock Audits",
+  },
+  {
+    id: "uswaththa",
+    name: "Uswatte Confectionery",
+    logoUrl: "/resources/uswaththa.png",
+    category: "Confectionery & Bakery",
+    tag: "Direct Retail Distribution",
+    metric: "Discount & Promo Rules",
+  },
+  {
+    id: "evon",
+    name: "EVON Professional",
+    logoUrl: "/resources/evon.png",
+    category: "Salon & Beauty Supplies",
+    tag: "Tiered Pricing Support",
+    metric: "Spot Invoice Receipts",
+  },
+  {
+    id: "lanwa-cement",
+    name: "Lanwa Sanstha Cement",
+    logoUrl: "/resources/lanvacement.jpg",
+    category: "Cement & Construction",
+    tag: "Heavy Fleet & Depot Billing",
+    metric: "Bulk Order Synchronization",
+  },
+  {
+    id: "cge",
+    name: "Ceylon Grain Elevators",
+    logoUrl: "/resources/cge.png",
+    category: "Agro & Feed Distribution",
+    tag: "Bulk Depot Invoicing",
+    metric: "Cheque Collection Log",
+  },
+  {
+    id: "sunrich",
+    name: "SUN RICH Biscuits",
+    logoUrl: "/resources/sunrich.png",
+    category: "Packaged FMCG Foods",
+    tag: "High Frequency Outlets",
+    metric: "Fast End-of-Day Settle",
+  },
+  {
+    id: "polycrome",
+    name: "Polycrome Electricals",
+    logoUrl: "/resources/polycrome.png",
+    category: "Electrical Accessories",
+    tag: "Retailer Credit Alerts",
+    metric: "Live Field Fleet Visibility",
+  },
+  {
+    id: "lanva",
+    name: "Lanka Steel (Lanwa)",
+    logoUrl: "/resources/lanva.png",
+    category: "Construction & Industrial",
+    tag: "Enterprise Scale",
+    metric: "Direct ERP Integration",
+  },
+];

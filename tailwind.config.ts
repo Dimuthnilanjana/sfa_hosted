@@ -1,0 +1,227 @@
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        // Design System Foundation: SFA Enterprise Tokens
+        sfa: {
+          ink: "#101722",
+          surface: "#182230",
+          elevated: "#202C3B",
+          border: "#303D4D",
+          light: "#FFFFFF",
+          warm: "#FAFAF7",
+          cool: "#F2F6FA",
+          pale: "#EAF2F8",
+          textLight: "#202A37",
+          textMutedLight: "#657181",
+          textDark: "#F4F7FB",
+          textMutedDark: "#B0BBC9",
+          brand: "#2387D9",
+          teal: "#2FAFA8",
+        },
+        // Rich deep dark surfaces (luminous night mode, not flat dead black)
+        dark: {
+          DEFAULT: "#101722",
+          50: "#1A2236",
+          100: "#13192B",
+          200: "#0F1524",
+          300: "#1E293B",
+          400: "#334155",
+          500: "#0B101E",
+          900: "#05070D",
+        },
+        // Gradient Blues spectrum:
+        // 1. Indigo / Deep Violet
+        indigo: {
+          DEFAULT: "#6366F1",
+          50: "#EEF2FF",
+          100: "#E0E7FF",
+          200: "#C7D2FE",
+          300: "#A5B4FC",
+          400: "#818CF8",
+          500: "#6366F1",
+          600: "#4F46E5",
+          700: "#4338CA",
+          800: "#3730A3",
+          900: "#312E81",
+        },
+        // 2. Radiant Blue
+        radiant: {
+          DEFAULT: "#3898FF",
+          50: "#EFF6FF",
+          100: "#DBEAFE",
+          200: "#BFDBFE",
+          300: "#93C5FD",
+          400: "#60A5FA",
+          500: "#3B82F6",
+          600: "#2563EB",
+          700: "#1D4ED8",
+        },
+        // 3. Electric Cyan / Azure
+        cyan: {
+          DEFAULT: "#00D2FF",
+          50: "#ECFEFF",
+          100: "#CFFAFE",
+          200: "#A5F3FC",
+          300: "#67E8F9",
+          400: "#22D3EE",
+          500: "#00D2FF",
+          600: "#0284C7",
+          700: "#0369A1",
+        },
+        // 4. Cool Aqua / Mint
+        aqua: {
+          DEFAULT: "#00E5D4",
+          50: "#F0FDFA",
+          100: "#CCFBF1",
+          200: "#99F6E4",
+          300: "#5EEAD4",
+          400: "#2DD4BF",
+          500: "#00E5D4",
+          600: "#14B8A6",
+          700: "#0D9488",
+        },
+        // Mapped lime to aqua/cyan so any legacy references adopt the new palette
+        lime: {
+          DEFAULT: "#00E5D4",
+          50: "#F0FDFA",
+          100: "#CCFBF1",
+          200: "#99F6E4",
+          300: "#5EEAD4",
+          400: "#2DD4BF",
+          500: "#00E5D4",
+          600: "#14B8A6",
+        },
+        // Purple accent
+        purple: {
+          DEFAULT: "#6366F1",
+          50: "#F3EEFF",
+          100: "#E8DFFE",
+          200: "#C4A6FC",
+          300: "#A5B4FC",
+          400: "#818CF8",
+          500: "#6366F1",
+          600: "#4F46E5",
+          700: "#4338CA",
+          800: "#3730A3",
+          900: "#1E1B4B",
+        },
+        // Brand & UI tokens
+        brand: {
+          50: "#EEF2FF",
+          100: "#E0E7FF",
+          200: "#BFDBFE",
+          300: "#93C5FD",
+          400: "#60A5FA",
+          500: "#3B82F6",
+          600: "#2563EB",
+          700: "#1D4ED8",
+          800: "#1E40AF",
+          900: "#0A1029",
+        },
+        navy: "#080B14",
+        accent: {
+          DEFAULT: "#00E5D4",
+          hover: "#00D2FF",
+        },
+        growth: "#00E5D4",
+        violet: "#6366F1",
+        ink: "#F8FAFC",
+        mist: "#0F172A",
+        line: "#1E293B",
+        danger: {
+          DEFAULT: "#E5484D",
+          soft: "#3D1517",
+        },
+        tealSoft: "#06282E",
+      },
+      fontFamily: {
+        geist: ['"Geist Variable"', '"Geist"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        sans: ['"Geist Variable"', '"Geist"', '"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+        heading: ['"Geist Variable"', '"Geist"', '"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+        body: ['"Geist Variable"', '"Geist"', '"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+        mono: ['var(--font-mono)', '"Geist Mono Variable"', '"Geist Mono"', 'ui-monospace', 'monospace'],
+      },
+      boxShadow: {
+        card: "0 10px 30px -12px rgba(0, 0, 0, 0.5)",
+        "card-hover": "0 20px 40px -15px rgba(0, 0, 0, 0.7)",
+        glass: "0 8px 32px 0 rgba(0, 210, 255, 0.12)",
+        "glow-aqua": "0 0 30px rgba(0, 229, 212, 0.35)",
+        "glow-cyan": "0 0 35px rgba(0, 210, 255, 0.35)",
+        "glow-indigo": "0 0 35px rgba(99, 102, 241, 0.35)",
+        "glow-lime": "0 0 30px rgba(0, 229, 212, 0.35)",
+        "glow-purple": "0 0 35px rgba(99, 102, 241, 0.35)",
+        "glow-purple-lg": "0 0 60px rgba(99, 102, 241, 0.4)",
+      },
+      borderRadius: {
+        card: "24px",
+      },
+      backgroundImage: {
+        "spectrum-gradient": "linear-gradient(135deg, #6366F1 0%, #3B82F6 30%, #00D2FF 70%, #00E5D4 100%)",
+        "aqua-gradient": "linear-gradient(135deg, #00E5D4 0%, #00D2FF 100%)",
+        "cyan-blue-gradient": "linear-gradient(135deg, #00D2FF 0%, #3B82F6 100%)",
+        "indigo-gradient": "linear-gradient(135deg, #6366F1 0%, #4F46E5 50%, #312E81 100%)",
+        "brand-gradient": "linear-gradient(135deg, #6366F1 0%, #00D2FF 100%)",
+        "lime-gradient": "linear-gradient(135deg, #00E5D4 0%, #00D2FF 100%)",
+        "purple-gradient": "linear-gradient(135deg, #6366F1 0%, #4F46E5 50%, #312E81 100%)",
+        "dark-gradient": "radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.12) 0%, rgba(0, 210, 255, 0.08) 35%, transparent 65%)",
+        "hero-gradient": "radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.22) 0%, rgba(0, 210, 255, 0.12) 45%, transparent 75%)",
+        "section-gradient": "radial-gradient(ellipse at 50% 50%, rgba(0, 210, 255, 0.08) 0%, rgba(99, 102, 241, 0.05) 50%, transparent 70%)",
+      },
+      keyframes: {
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        pulseGlow: {
+          "0%, 100%": { opacity: "1", transform: "scale(1)" },
+          "50%": { opacity: "0.5", transform: "scale(1.2)" },
+        },
+        shimmer: {
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
+        },
+        fadeUp: {
+          "0%": { opacity: "0", transform: "translateY(30px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        scaleIn: {
+          "0%": { opacity: "0", transform: "scale(0.95)" },
+          "100%": { opacity: "1", transform: "scale(1)" },
+        },
+        slideRight: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(0)" },
+        },
+      },
+      animation: {
+        float: "float 6s ease-in-out infinite",
+        "float-delayed": "float 6s ease-in-out 3s infinite",
+        marquee: "marquee 55s linear infinite",
+        pulseGlow: "pulseGlow 2s ease-in-out infinite",
+        shimmer: "shimmer 3s linear infinite",
+        fadeUp: "fadeUp 0.6s ease-out forwards",
+        fadeIn: "fadeIn 0.6s ease-out forwards",
+        scaleIn: "scaleIn 0.5s ease-out forwards",
+        slideRight: "slideRight 0.5s ease-out forwards",
+      },
+    },
+  },
+  plugins: [],
+};
+export default config;

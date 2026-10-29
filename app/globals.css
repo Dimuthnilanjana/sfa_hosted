@@ -1,0 +1,529 @@
+/* Helvetica Neue Font Declarations from public/font/ */
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/font/HelveticaNeueRoman.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/font/HelveticaNeueLight.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/font/HelveticaNeueMedium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/font/HelveticaNeueBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/font/HelveticaNeueHeavy.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('/font/HelveticaNeueBlack.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+:host {
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+
+  --background: #FFFFFF;
+  --background-subtle: #F8FAFC;
+  --background-muted: #F3F6FA;
+  --background-blue: #EFF6FF;
+
+  --foreground: #111827;
+  --foreground-secondary: #4B5563;
+  --foreground-muted: #6B7280;
+
+  --primary: #2563EB;
+  --primary-hover: #1D4ED8;
+  --primary-soft: #EFF6FF;
+
+  --accent-blue: #38BDF8;
+  --accent-violet: #8B5CF6;
+
+  --border: #E5E7EB;
+  --border-blue: #D7E7FA;
+
+  --surface: #FFFFFF;
+  --surface-secondary: #F8FAFC;
+
+  --radius-control: 8px;
+  --radius-card: 12px;
+  --radius-panel: 16px;
+
+  --content-width: 1200px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+    color: var(--foreground);
+    background-color: var(--background);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply antialiased font-sans;
+    background-color: var(--background);
+    color: var(--foreground);
+    overflow-x: hidden;
+  }
+
+  /* Absolute rule: NO ITALIC TYPOGRAPHY ANYWHERE */
+  *, *::before, *::after {
+    font-style: normal !important;
+  }
+
+  ::selection {
+    background: #DBEAFE;
+    color: #1E3A8A;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    letter-spacing: -0.025em;
+    font-weight: 700;
+    color: #111827;
+  }
+
+  /* Accessible Focus Ring */
+  :focus-visible {
+    outline: 2px solid #2563EB;
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /* Subtle CommandLine Technical Grid (Fine 48px lines at 3-5% opacity) */
+  .bg-grid-light {
+    background-image: 
+      linear-gradient(to right, rgba(15, 23, 42, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(15, 23, 42, 0.045) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  .bg-grid-subtle {
+    background-image: 
+      linear-gradient(to right, rgba(37, 99, 235, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(37, 99, 235, 0.04) 1px, transparent 1px);
+    background-size: 52px 52px;
+  }
+
+  .badge-figma-shadow {
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.4), 0px 1px 4px rgba(0, 210, 255, 0.1);
+  }
+
+  .font-helvetica {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Accent text styling */
+  .text-glow-aqua {
+    color: #2FAFA8;
+  }
+
+  .text-glow-cyan {
+    color: #2387D9;
+  }
+
+  /* Refined border effect */
+  .glow-border-indigo {
+    box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.25);
+  }
+
+  .glow-border-cyan {
+    box-shadow: 0 0 0 1px rgba(35, 135, 217, 0.25);
+  }
+
+  /* Card hover glow - subtle elevation */
+  .hover-glow-purple,
+  .hover-glow-blue {
+    transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  }
+  .hover-glow-purple:hover,
+  .hover-glow-blue:hover {
+    box-shadow: 0 12px 28px -8px rgba(16, 23, 34, 0.15), 0 0 0 1px rgba(35, 135, 217, 0.3);
+    border-color: rgba(35, 135, 217, 0.35);
+  }
+
+  /* Gradient text for Spectrum / Aqua / Cyan */
+  .text-gradient-spectrum {
+    background: linear-gradient(90deg, #6366F1, #3B82F6, #00D2FF, #00E5D4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-cyan {
+    background: linear-gradient(90deg, #00D2FF, #00E5D4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-blue {
+    background: linear-gradient(90deg, #6366F1, #00D2FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Backward compatibility for text-gradient-lime */
+  .text-gradient-lime {
+    background: linear-gradient(90deg, #00D2FF, #00E5D4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Subtle noise texture overlay */
+  .noise-overlay::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+}
+
+/* ==============================================
+   CINEMATIC HERO BACKGROUND SYSTEM (Reference-Matched)
+   ============================================== */
+
+/* ==============================================
+   LIGHT THEME ATMOSPHERIC ILLUMINATION (CommandLine-Inspired)
+   - Extremely soft, translucent radial gradients over white canvas
+   - Slow 22-35s cycles, moving pre-blurred layers with transforms
+   ============================================== */
+
+/* Base container blur styling with hardware acceleration */
+.hero-gradient-layer {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(120px);
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+/* Layer A: Lower-Left Luminous Cyan & Soft Blue Glow */
+.hero-glow-cyan {
+  background: radial-gradient(circle at 40% 60%, rgba(56, 189, 248, 0.18) 0%, rgba(37, 99, 235, 0.12) 45%, transparent 70%);
+  animation: floatGlowCyan 24s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlowCyan {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate3d(35px, -25px, 0) scale(1.1);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate3d(-20px, 20px, 0) scale(0.95);
+    opacity: 0.65;
+  }
+}
+
+/* Layer B: Mid-Center Soft Blue & Violet Ambient Field */
+.hero-glow-royal {
+  background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.12) 0%, rgba(139, 92, 246, 0.08) 50%, transparent 75%);
+  animation: floatGlowRoyal 30s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlowRoyal {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate3d(-30px, 25px, 0) scale(1.08) rotate(2deg);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(25px, -20px, 0) scale(0.92) rotate(-2deg);
+    opacity: 0.55;
+  }
+}
+
+/* Layer C: Right / Lower-Right Restrained Violet Accent */
+.hero-glow-violet {
+  background: radial-gradient(circle at 60% 60%, rgba(139, 92, 246, 0.14) 0%, rgba(56, 189, 248, 0.08) 50%, transparent 75%);
+  animation: floatGlowViolet 32s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlowViolet {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate3d(-35px, -20px, 0) scale(1.12);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate3d(20px, 25px, 0) scale(0.94);
+    opacity: 0.45;
+  }
+}
+
+/* Layer D: Top Soft Atmosphere */
+.hero-glow-deep-navy {
+  background: radial-gradient(ellipse at 50% 20%, rgba(239, 246, 255, 0.9) 0%, rgba(243, 246, 250, 0.5) 50%, transparent 80%);
+  animation: floatGlowDeepNavy 34s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlowDeepNavy {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.06);
+    opacity: 0.95;
+  }
+}
+
+/* Prefers-reduced-motion safety for smooth accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .hero-glow-cyan,
+  .hero-glow-royal,
+  .hero-glow-violet,
+  .hero-glow-deep-navy,
+  .animate-star-float {
+    animation: none !important;
+  }
+}
+
+/* Hero accent text — Gradient Blues spectrum shimmer */
+.hero-accent-text {
+  background: linear-gradient(
+    90deg,
+    #00D2FF 0%,
+    #00E5D4 25%,
+    #67E8F9 50%,
+    #38BDF8 75%,
+    #00D2FF 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: accentShimmer 4s linear infinite;
+  filter: drop-shadow(0 0 30px rgba(0, 210, 255, 0.45));
+}
+
+@keyframes accentShimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Video container glow pulse */
+.hero-video-glow {
+  animation: videoGlowPulse 6s ease-in-out infinite;
+}
+
+@keyframes videoGlowPulse {
+  0%, 100% {
+    opacity: 0.6;
+    filter: blur(25px);
+  }
+  50% {
+    opacity: 0.9;
+    filter: blur(35px);
+  }
+}
+
+/* Staggered fade-up entrance animation */
+.hero-fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes heroFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar — dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #18181B;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #27272A;
+}
+
+/* Star particle subtle drift and twinkle */
+@keyframes starFloat {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.9);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate3d(-12px, -24px, 0) scale(1.3);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translate3d(10px, -48px, 0) scale(0.9);
+    opacity: 0.35;
+  }
+}
+
+.animate-star-float {
+  animation: starFloat 7s ease-in-out infinite;
+}
+
+/* Subtle continuous grid movement animation */
+@keyframes moveGrid {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 48px 48px;
+  }
+}
+
+.animate-grid-subtle {
+  animation: moveGrid 28s linear infinite;
+}
+
+/* Animated Border Gradient for Pill Badge / Button */
+@keyframes borderRotate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient-border {
+  position: relative;
+  background-size: 200% 200%;
+  animation: borderRotate 4s linear infinite;
+}
+
+/* Infinite Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 55s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 55s linear infinite;
+}
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+.text-blue-anim {
+    -webkit-text-fill-color: transparent;
+    background: linear-gradient(120deg, rgb(0, 98, 255), rgb(107, 160, 255), rgb(0, 98, 255)) 0px 0px / 200% 200% text;
+}
+
+/* Subtle Left-Sided Dark Navy Radial Gradient for Black Sections */
+.bg-dark-navy-ambient {
+  background:
+    radial-gradient(
+      ellipse 75% 85% at 0% 0%,
+      rgba(13, 43, 94, 0.35) 0%,
+      rgba(8, 25, 56, 0.20) 35%,
+      transparent 72%
+    ),
+    #050609;
+}
+
+/* Safety net: auto-hide the intro PageLoader even if JavaScript fails to
+   hydrate (stale cache, chunk load error, etc.) so the site never stays blank. */
+@keyframes pageLoaderFailsafe {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.page-loader-failsafe {
+  animation: pageLoaderFailsafe 0.4s ease-out 3.5s forwards;
+}
