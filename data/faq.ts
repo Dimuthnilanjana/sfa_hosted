@@ -4,6 +4,8 @@ export interface FAQItem {
   answer: string;
 }
 
+
+
 export const faqData: FAQItem[] = [
   {
     id: "setup-time",
