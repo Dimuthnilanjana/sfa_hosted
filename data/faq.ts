@@ -6,6 +6,8 @@ export interface FAQItem {
 
 
 
+
+
 export const faqData: FAQItem[] = [
   {
     id: "setup-time",
